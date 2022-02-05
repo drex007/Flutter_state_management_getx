@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/controller/secondPage.dart';
 import 'package:getx/controller/tap_controller.dart';
+
+import 'first_page.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({ Key? key }) : super(key: key);
@@ -10,9 +13,7 @@ class MyHomePage extends StatelessWidget {
    TapController controller = Get.put(TapController());
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text("New Home"),
-      ),
+
       body: Container(
         width: double.maxFinite,
         height: double.maxFinite,
@@ -32,7 +33,7 @@ class MyHomePage extends StatelessWidget {
                     ),
                     child: Center(
                     child: 
-                    Text(controller.x.toString(), style: TextStyle(
+                    Text("Value of X:" + " " +  controller.x.toString(), style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -58,7 +59,7 @@ class MyHomePage extends StatelessWidget {
                     ),
                     child: Center(
                     child: 
-                    Text("Tap", style: TextStyle(
+                    Text("Increase X", style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -71,6 +72,7 @@ class MyHomePage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: (){
+                Get.to(()=>FirstPage());
                 
               },
               child: Container(
@@ -83,7 +85,7 @@ class MyHomePage extends StatelessWidget {
                     ),
                     child: Center(
                     child: 
-                    Text("Tap", style: TextStyle(
+                    Text("Go to First Page", style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -96,7 +98,7 @@ class MyHomePage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: (){
-                
+                Get.to(()=>SecondPage());
               },
               child: Container(
                   margin: const EdgeInsets.all(20),
@@ -108,7 +110,7 @@ class MyHomePage extends StatelessWidget {
                     ),
                     child: Center(
                     child: 
-                    Text("Tap", style: TextStyle(
+                    Text("Go To SecondPage", style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -121,7 +123,7 @@ class MyHomePage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: (){
-                
+                controller.resetX();
               },
               child: Container(
                   margin: const EdgeInsets.all(20),
@@ -133,7 +135,7 @@ class MyHomePage extends StatelessWidget {
                     ),
                     child: Center(
                     child: 
-                    Text("Tap", style: TextStyle(
+                    Text("Reset X", style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
