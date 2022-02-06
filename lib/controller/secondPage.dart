@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/controller/list_controller.dart';
 import 'package:getx/controller/tap_controller.dart';
 import 'package:getx/my_homepage.dart';
 
@@ -10,6 +11,7 @@ class SecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   TapController controller = Get.find();
+  ListController listcontroller = Get.put(ListController());
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -111,7 +113,7 @@ class SecondPage extends StatelessWidget {
                
               ),
             ),
-        
+          
           
         ],
       ),
